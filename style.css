@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 85vh;
+  display: flex;
+  background: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e2fcc726-7f1e-4651-ac31-a4f6df8d06ba/dg5jrrb-a22897f5-51a8-4e29-add4-a49583e9b414.png/v1/fill/w_1920,h_1077,q_80,strp/cyberpunk_city_by_minco007_dg5jrrb-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA3NyIsInBhdGgiOiJcL2ZcL2UyZmNjNzI2LTdmMWUtNDY1MS1hYzMxLWE0ZjZkZjhkMDZiYVwvZGc1anJyYi1hMjI4OTdmNS01MWE4LTRlMjktYWRkNC1hNDk1ODNlOWI0MTQucG5nIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.-brzSRJsiYgA3vjyefAhM2-_68dZK_mZPtD-SG6Du28");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.memory-game {
+  width: 650px;
+  height: 650px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(40% - 10px);
+  margin: 3px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: scale(1);
+  transition: transform .5s;
+}
+
+.memory-card:active {
+  transform: scale(.95);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  position: absolute;
+  border-radius: 9px;
+  background: black;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
